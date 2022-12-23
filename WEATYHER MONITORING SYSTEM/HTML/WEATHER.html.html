@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1, user-scalable=no"/>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <style>
+      body {
+    background: linear-gradient(rgb(37, 37, 112), rgb(0, 2, 10));
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+#bapofall {
+    background-color: rgba(250, 235, 215, 0);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#upperbap {
+    background: linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238));
+    width: 100%;
+    height: 73%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#lowerbap {
+    background-color: rgba(20, 115, 199, 0);
+    width: 100%;
+    height: 27%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#lowerbetas {
+    width: 95%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lowerbetakapehla {
+    width: 100%;
+    height: 20%;
+    background-color: rgba(52, 52, 138, 0);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#whichday {
+    width: 45%;
+    padding-left: 5%;
+    height: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    color: rgb(219, 219, 219);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#showallforecast {
+    width: 45%;
+    padding-right: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: rgb(194, 194, 194);
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#lowerbetakadusra {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(111, 111, 255, 0);
+}
+
+#minione {
+    width: 23%;
+    height: 80%;
+    /* background: linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238)); */
+    background-color: rgba(101, 101, 201, 0.072);
+    box-shadow: 0px 0px 3px rgba(87, 155, 232, 0.547);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#minitwo {
+    width: 23%;
+    height: 80%;
+    background-color: rgba(101, 101, 201, 0.072);
+    box-shadow: 0px 0px 3px rgba(87, 155, 232, 0.547);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#minithree {
+    width: 23%;
+    height: 80%;
+    background-color: rgba(101, 101, 201, 0.072);
+    box-shadow: 0px 0px 3px rgba(87, 155, 232, 0.547);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#minifour {
+    width: 23%;
+    height: 80%;
+    background-color: rgba(101, 101, 201, 0.072);
+    box-shadow: 0px 0px 3px rgba(87, 155, 232, 0.547);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+.minitemp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25%;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.miniweatherlogo {
+    
+    width: 80%;
+    height: 40%;
+    border-radius: 10px;
+    /* background-color: rgba(250, 235, 215, 0); */
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: contain;
+}
+
+.minilogotime {
+    width: 80%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: azure;
+}
+
+#upperbap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#wrapall {
+    width: 95%;
+    height: 95%;
+    background-color: rgba(250, 235, 215, 0);
+    border-radius: 10px;
+}
+
+#weatherupperbody {
+    width: 100%;
+    height: 13%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(162, 152, 138, 0);
+    border-radius: 10px;
+}
+
+#refreshbutton {
+    width: 20%;
+    height: 70%;
+    border-radius: 20px;
+    background-image: url("https://cdn-icons-png.flaticon.com/128/7914/7914801.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#weatherlocation {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#optionssettings {
+    width: 18%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: white;
+    font: 1.5em arial ;
+}
+
+#weatherlocation #weatherplace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 35%;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+#weatherlocation #weathercountry {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 35%;
+    color: white;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weathermiddlebody {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 220, 0);
+
+}
+
+#weatherlogo {
+    width: 90%;
+    height: 55%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-image: url("https://cdn-icons-png.flaticon.com/512/1146/1146860.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#tempvalue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 25%;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 196, 0);
+    color: white;
+    font-size: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+#weathercondition {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 80%;
+    height: 10%;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 196, 0);
+    color: white;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+#weatherdate {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+
+#weatherlowerbody {
+    width: 100%;
+    height: 19%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(188, 249, 249, 0);
+    border-radius: 10px;
+}
+
+#weatherwind {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(116, 116, 210, 0);
+    color: white;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+#weatherrain {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(116, 116, 210, 0);
+    color: white;
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+#weatherhumidity {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(116, 116, 210, 0);
+    color: white;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+#weatherlowerbodylogoweatherwind {
+    width: 100%;
+    height: 35%;
+    border-radius: 5px;
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#weatherlowerbodyvalueweatherwind {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherlowerbodydetailweatherwind {
+    width: 100%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    font-size: small;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherlowerbodylogoweatherhumidity {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#weatherlowerbodyvalueweatherhumidity {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    display: flex;
+    font-size: x-large;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherlowerbodydetailweatherhumidity {
+    width: 100%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherlowerbodylogoweatherrain {
+    width: 100%;
+    height: 25%;
+    border-radius: 5px;
+    background-image: url('');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#weatherlowerbodyvalueweatherrain {
+    width: 100%;
+    height: 30%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#weatherlowerbodydetailweatherrain {
+    width: 100%;
+    height: 20%;
+    border-radius: 5px;
+    background-color: rgba(250, 235, 215, 0);
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.minitemp{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: rgba(240, 248, 255, 0);
+}
+.minilogotime { 
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color:rgba(0, 0, 0, 0);
+}
+#hourlyforecastbody{
+background: linear-gradient(rgb(32, 164, 212), rgb(6, 58, 126));  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.forecastnav{
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(250, 235, 215, 0);
+  border-bottom: 1px solid white;
+}
+.forecastheader{
+  width: 85%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-large;
+  color: white;
+}
+
+.backtohome{
+  background-image: url("https://img.icons8.com/fluency/128/circled-left-2.png");
+  width: 15%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.hourlyforecastcont{
+  width: 100%;
+  height: 92%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.hourlyforecast{
+  width: 90%;
+  margin-top: 2%;
+  height: 11%;
+  padding: 2%;
+  background-color: rgba(101, 101, 201, 0.072);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 0px 2px rgb(203, 213, 255);
+}
+
+.hourlyforecastlogo{
+  width: 20%;
+  height: 100%;
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.hourlyforecastdetails{
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(222, 184, 135, 0);
+  border-radius: 10px;
+}
+.hourlyforecasttitle{
+  width: 90%;
+  height: 35%;
+  background-color: rgba(245, 245, 220, 0);
+  border-radius: 10px;
+  color: rgb(234, 234, 234);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+}
+.hourlyforecastvalcont{
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+.hourlyforecasttemp{
+  width: 45%;
+  height: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hourlyforecasttemplogo{
+  width: 50%;
+  height: 80%;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/2100/2100130.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hourlyforecasttempval{
+  width: 50%;
+  height: 100%;
+  color: white;
+  font: 1.4em bold Arial;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hourlyforecasthumidity{
+  width: 45%;
+  height: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.hourlyforecasthumiditylogo{
+  width: 50%;
+  height: 70%;
+  background-image: url("https://cdn-icons-png.flaticon.com/128/2828/2828802.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hourlyforecasthumidityval{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  font: 1.4em bold Arial;
+}
+.hourlyforecasttitileval{
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hourlyforecasttime{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.hourlyforecastcont{
+  top:0;
+  overflow-y: scroll;
+}
+#hourlyforecastbody{
+  display: none;
+  height: 100%;
+}
+.hourlyforecastlogoimg{
+  width: 100%;
+  height: 100%;
+}
+.hourlyforecastlogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ #monitoringpageheader {
+  width: 80%;
+  height: 100%;
+  font: bold large "arial";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#monitoringpage {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 100vh;
+}
+#backtohomefrommonitoring {
+  width: 20%;
+  height: 100%;
+  background-image: url("https://img.icons8.com/fluency/128/circled-left-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+#monitoringpagenav {
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+#monitoringpagebody{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#monitoringpage{
+  overflow: auto;
+  background: linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238));
+
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+  </style>
+  </head>
+  <body>
+    <div id="monitoringpage">
+      <div id="monitoringpagenav">
+        <div id="backtohomefrommonitoring"></div>
+        <h3 id="monitoringpageheader">Live Data from the station</h3>
+      </div>
+     <div id="monitoringpagebody">
+      <iframe width="550"
+       height="280"
+       style="border: 1px solid #cccccc;transform: scaleX(0.5);" 
+       src="https://thingspeak.com/channels/1980843/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line"></iframe><br>
+      <iframe width="550"
+       height="280"
+       style="border: 1px solid #cccccc;transform: scaleX(0.5);" 
+       src="https://thingspeak.com/channels/1980843/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+<br>
+      <iframe width="550"
+       height="280"
+       style="border: 1px solid #cccccc;transform: scaleX(0.5);" 
+       src="https://thingspeak.com/channels/1980843/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+<br>
+       <iframe width="550"
+       height="220"
+       style="border: 1px solid #cccccc;transform: scaleX(0.5);" 
+       src="https://thingspeak.com/channels/1980843/maps/channel_show"></iframe>
+
+      </div>
+    </div>
+      
+    <div id="hourlyforecastbody">
+      <div class="forecastnav">
+        <div class="backtohome"></div>
+        <div class="forecastheader">Hourly Forecast</div>
+      </div>
+      <div class="hourlyforecastcont">
+      </div>     
+    </div>  
+    <div id="bapofall">
+      <div id="upperbap">
+        <div id="wrapall">
+          <div id="weatherupperbody">
+            <div id="refreshbutton"></div>
+            <div id="weatherlocation">
+              <div id="weatherplace">Guntur</div>
+              <div id="weathercountry">India</div>
+            </div>
+            <div id="optionssettings">18:15</div>
+          </div>
+
+          <div id="weathermiddlebody">
+            <div id="weatherlogo"></div>
+            <div id="tempvalue">22 &#xb0</div>
+            <div id="weathercondition">Thunderstorm</div>
+            <div id="weatherdate">Thursday 9 dec</div>
+          </div>
+          <div id="weatherlowerbody">
+            <div id="weatherwind">
+              <div id="weatherlowerbodylogoweatherwind"></div>
+              <div id="weatherlowerbodyvalueweatherwind">12kmph</div>
+              <div id="weatherlowerbodydetailweatherwind">wind speed</div>
+            </div>
+            <div id="weatherhumidity">
+              <div id="weatherlowerbodylogoweatherhumidity"></div>
+              <div id="weatherlowerbodyvalueweatherhumidity">32%</div>
+              <div id="weatherlowerbodydetailweatherhumidity">humidity</div>
+            </div>
+            <div id="weatherrain">
+              <div id="weatherlowerbodylogoweatherrain"></div>
+              <div id="weatherlowerbodyvalueweatherrain">90%</div>
+              <div id="weatherlowerbodydetailweatherrain">rain</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="lowerbap">
+        <div id="lowerbetas">
+          <div id="lowerbetakapehla">
+            <div id="whichday">Today</div>
+            <div id="showallforecast">Show all</div>
+          </div>
+          <div id="lowerbetakadusra">
+            <div id="minione" class="weatherforecastminisonhome">
+              <div id="weatherforecastminisonhome1temp" class="minitemp">25&#xb0</div>
+              <div id="weatherforecastminisonhome1logo" class="miniweatherlogo"></div>
+              <div id="weatherforecastminisonhome1time" class="minilogotime">7:00 am</div>
+            </div>
+            <div id="minitwo" class="weatherforecastminisonhome">
+              <div id="weatherforecastminisonhome2temp" class="minitemp">26&#xb0</div>
+              <div id="weatherforecastminisonhome2logo" class="miniweatherlogo"></div>
+              <div id="weatherforecastminisonhome2time" class="minilogotime">8:00 am</div>
+            </div>
+            <div id="minithree" class="weatherforecastminisonhome">
+              <div id="weatherforecastminisonhome3temp" class="minitemp">27&#xb0</div>
+              <div id="weatherforecastminisonhome3logo" class="miniweatherlogo"></div>
+              <div id="weatherforecastminisonhome3time" class="minilogotime">9:00 am</div>
+            </div>
+            <div id="minifour" class="weatherforecastminisonhome">
+              <div id="weatherforecastminisonhome4temp" class="minitemp">29&#xb0</div>
+              <div id="weatherforecastminisonhome4logo" class="miniweatherlogo"></div>
+              <div id="weatherforecastminisonhome4time" class="minilogotime">10:00 am</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script >
+      $("#refreshbutton").click(()=>{
+        $("#bapofall").css('display', 'none');
+        $("#monitoringpage").css('display', 'flex');
+      })
+      $("#backtohomefrommonitoring").click(()=>{
+        $("#monitoringpage").css('display', 'none');
+        $("#bapofall").css('display', 'flex');
+      })
+      const IMAGES = {
+          thunderstorm:
+            "https://cdn-icons-png.flaticon.com/512/1146/1146860.png",
+          cloud: "https://cdn-icons-png.flaticon.com/512/414/414927.png",
+          cloudysun: "https://cdn-icons-png.flaticon.com/512/1146/1146869.png",
+          coldmen: "https://cdn-icons-png.flaticon.com/512/2831/2831987.png",
+          cold: "https://cdn-icons-png.flaticon.com/512/2274/2274529.png",
+          rain: "https://cdn-icons-png.flaticon.com/512/8841/8841317.png",
+          brightsun: "https://cdn-icons-png.flaticon.com/512/439/439842.png",
+          snowfall: "https://cdn-icons-png.flaticon.com/512/1387/1387108.png",
+          humidity: "https://cdn-icons-png.flaticon.com/512/2828/2828802.png",
+          raindrops: "https://cdn-icons-png.flaticon.com/512/2792/2792706.png",
+          windspeed: "https://cdn-icons-png.flaticon.com/512/8569/8569944.png",
+          optionssettings:
+            "https://cdn-icons-png.flaticon.com/128/5719/5719317.png",
+          refreshbutton:
+            "https://cdn-icons-png.flaticon.com/128/3103/3103567.png",
+          cloudymoonx:
+            "https://cdn-icons-png.flaticon.com/512/1147/1147494.png",
+          cloudymoon: "https://cdn-icons-png.flaticon.com/128/1147/1147494.png",
+          clearmoonx: "https://cdn-icons-png.flaticon.com/512/2204/2204369.png",
+          clearmoon: "https://cdn-icons-png.flaticon.com/128/2204/2204369.png",
+          rainmoonx: "https://cdn-icons-png.flaticon.com/512/5903/5903792.png",
+          rainmoon: "https://cdn-icons-png.flaticon.com/128/5903/5903792.png",
+          nightstormx:
+            "https://cdn-icons-png.flaticon.com/512/1959/1959348.png",
+          nightstorm: "https://cdn-icons-png.flaticon.com/128/1959/1959348.png",
+          mistx: "https://cdn-icons-png.flaticon.com/512/6142/6142667.png",
+          mist: "https://cdn-icons-png.flaticon.com/128/6142/6142667.png",
+        };
+
+        const openwmIMAGES = {
+          "01d": IMAGES.brightsun,
+          "02d": IMAGES.cloudysun,
+          "03d": IMAGES.cloud,
+          "04d": IMAGES.cloud,
+          "09d": IMAGES.rain,
+          "10d": IMAGES.rain,
+          "11d": IMAGES.thunderstorm,
+          "13d": IMAGES.snowfall,
+          "50d": IMAGES.mistx,
+          "01n": IMAGES.clearmoonx,
+          "02n": IMAGES.cloudymoonx,
+          "03n": IMAGES.cloudymoonx,
+          "04n": IMAGES.cloudymoonx,
+          "09n": IMAGES.rainmoonx,
+          "10n": IMAGES.rainmoonx,
+          "11n": IMAGES.nightstormx,
+          "13n": IMAGES.snowfall,
+          "50n": IMAGES.mistx,
+        };
+      var loc_id;
+
+      function pushforecast(res1){
+        // console.log("received",res1);
+        const res=res1;
+        
+        for(let i=0;i<res.list.length;i++){
+
+          
+            $(".hourlyforecastcont").append(`<div class="hourlyforecast">
+            <div id="hourlyforecastlogo${i}" class="hourlyforecastlogo"><img class="hourlyforecastlogoimg" src="${openwmIMAGES[res.list[i].weather[0].icon]}"></div>
+            <div class="hourlyforecastdetails">
+              <div class="hourlyforecasttitle">
+                <div class="hourlyforecasttitileval">${res.list[i].weather[0].main}</div>
+                <div class="hourlyforecasttime">${res.list[i].dt_txt.slice(11,16)}</div>
+              </div>
+              <div class="hourlyforecastvalcont">
+                <div class="hourlyforecasttemp">
+                  <div class="hourlyforecasttemplogo"></div>
+                  <div class="hourlyforecasttempval">${Math.floor(res.list[i].main.temp - 273)}&#xb0</div>
+                </div>
+                <div class="hourlyforecasthumidity">
+                  <div class="hourlyforecasthumiditylogo"></div>
+                  <div class="hourlyforecasthumidityval">${res.list[i].main.humidity}%</div>
+                </div>
+              </div>
+            </div>
+        </div>`)
+        
+          
+          
+        // console.log(openwmIMAGES[res.list[i].weather[0].icon]);
+        }
+      }
+      document.getElementById("showallforecast").addEventListener('click', function(){
+          $("#bapofall").css("display","none");
+          $("#hourlyforecastbody").css("display","flex");
+          
+        $.ajax({
+          url:`http://api.openweathermap.org/data/2.5/forecast?id=${loc_id}&appid=7c1feed86ba9b7956582e77283804810`,
+          type:'GET',
+          success:(res)=>{
+            // console.log(res);
+            pushforecast(res);
+          }
+        })
+      });
+      
+      $(".backtohome").click(()=>{
+        $("#bapofall").css("display","flex");
+        $("#hourlyforecastbody").css("display","none");
+        $(".hourlyforecastcont").html("");
+      })
+      
+    
+      $("#minione").click(function(){
+        $("#minione").css("height","90%");
+        $("#minione").css("background","linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238))");
+        /**/
+        $("#minitwo").css("height","80%");
+        $("#minitwo").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minithree").css("height","80%");
+        $("#minithree").css("background","rgba(101, 101, 201, 0.072)");
+         $("#minifour").css("height","80%");
+        $("#minifour").css("background","rgba(101, 101, 201, 0.072)");
+      })
+      $("#minitwo").click(function(){
+        $("#minitwo").css("height","90%");
+        $("#minitwo").css("background","linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238))");
+        /**/
+        $("#minione").css("height","80%");
+        $("#minione").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minithree").css("height","80%");
+        $("#minithree").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minifour").css("height","80%");
+        $("#minifour").css("background","rgba(101, 101, 201, 0.072)");
+      })
+      $("#minithree").click(function(){
+        $("#minithree").css("height","90%");
+        $("#minithree").css("background","linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238))");
+        /**/
+        $("#minione").css("height","80%");
+        $("#minione").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minitwo").css("height","80%");
+        $("#minitwo").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minifour").css("height","80%");
+        $("#minifour").css("background","rgba(101, 101, 201, 0.072)");
+      })
+      $("#minifour").click(function(){
+        $("#minifour").css("height","90%");
+        $("#minifour").css("background","linear-gradient(rgb(76, 204, 255), rgb(54, 134, 238))");
+        /**/
+        $("#minione").css("height","80%");
+        $("#minione").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minithree").css("height","80%");
+        $("#minithree").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minitwo").css("height","80%");
+        $("#minitwo").css("background","rgba(101, 101, 201, 0.072)");
+      })
+    
+
+      $("#upperbap").click(()=>{
+        $("#minione").css("height","80%");
+        $("#minione").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minifour").css("height","80%");
+        $("#minifour").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minithree").css("height","80%");
+        $("#minithree").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minitwo").css("height","80%");
+        $("#minitwo").css("background","rgba(101, 101, 201, 0.072)");
+      })
+      $("#lowerbetakapehla").click(()=>{
+        $("#minione").css("height","80%");
+        $("#minione").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minifour").css("height","80%");
+        $("#minifour").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minithree").css("height","80%");
+        $("#minithree").css("background","rgba(101, 101, 201, 0.072)");
+        $("#minitwo").css("height","80%");
+        $("#minitwo").css("background","rgba(101, 101, 201, 0.072)");
+      
+      })
+      $(document).ready(function(){
+        $("#weatherlowerbodylogoweatherwind").css("background-image", `url(${IMAGES.windspeed})`);
+        $("#weatherlowerbodylogoweatherhumidity").css("background-image", `url(${IMAGES.humidity})`);
+        $("#weatherlowerbodylogoweatherrain").css("background-image", `url(${IMAGES.raindrops})`);
+        // $("#refreshbutton").css("background-image",`url(${IMAGES.refreshbutton})`);
+        const BASE_URL = "http://api.openweathermap.org/data/2.5/weather?";
+        const CITY = "guntur";
+        const URL =
+          BASE_URL +
+          "appid=" +
+          "865a693e086bf16e909ef83a1a4a2c23" +
+          "&q=" +
+          CITY;
+        
+        $.ajax({
+          url: `${URL}`,
+          type: "GET",
+          success: (res) => {
+            // console.log(res);
+            const iconid = openwmIMAGES[res.weather[0].icon];
+            $("#weatherlogo").css("background-image", `url(${iconid})`);
+            $("#tempvalue").html(Math.floor(res.main.temp-273).toString()+"&#xb0");
+            $("#weathercondition").html(res.weather[0].main);
+            $("#weatherlowerbodyvalueweatherwind").html(`${(res.wind.speed*3.6).toFixed(2)}kmph`);
+            $("#weatherlowerbodydetailweatherwind").html("wind speed")
+            $("#weatherlowerbodyvalueweatherhumidity").html(`${res.main.humidity}%`);
+            if(res.weather[0].main === 'Rain'){
+              $("#weatherlowerbodyvalueweatherrain").html(`Rain`);
+              $("#weatherlowerbodydetailweatherrain").html(res.weather[0].description);
+            }
+            else{
+              $("#weatherlowerbodyvalueweatherrain").html(`no rain`);
+            }
+            $("#weatherplace").html(res.name);
+            // '05/23/2014'
+            var today=new Date();  
+            $("#weatherdate").html(today.toString().slice(0,10));
+            var d = new Date();
+            $("#optionssettings").html(d.toLocaleString().slice(12,17));
+            // console.log(Math.floor(res.main.temp-273).toString());
+            loc_id=res.id;
+            $.ajax({
+              url:`http://api.openweathermap.org/data/2.5/forecast?id=${loc_id}&appid=7c1feed86ba9b7956582e77283804810`,
+              type:'GET',
+              success:(res)=>{
+                // console.log(res);
+                // console.log("aaya");
+                for(let i=1;i<=4;i++){
+                $(`#weatherforecastminisonhome${i}temp`).html(`${Math.floor(res.list[i-1].main.temp-273)}&#xb0`);
+                $(`#weatherforecastminisonhome${i}logo`).css('background-image', `url(${openwmIMAGES[res.list[i-1].weather[0].icon]})`);
+                $(`#weatherforecastminisonhome${i}time`).html(`${res.list[i-1].dt_txt.slice(11,16)}`);
+                }
+                // console.log(Math.floor(res.list[i-1].main.temp-273));
+                // console.log(openwmIMAGES[res.list[i-1].weather[0].icon]);
+                // console.log(res.list[i-1].dt_txt.slice(11,16));
+              }
+            })
+          },
+        });
+         
+      });
+    </script>
+  </body>
+</html>
